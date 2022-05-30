@@ -41,7 +41,7 @@ export const Bm55pluginApp = ({ basename, notifications, http, navigation }: Bm5
         <>
           <navigation.ui.TopNavMenu
             appName={PLUGIN_ID}
-            showSearchBar={true}
+            showSearchBar={false}
             useDefaultBehaviors={true}
           />
           <EuiPage restrictWidth="1000px">
@@ -78,7 +78,7 @@ export const Bm55pluginApp = ({ basename, notifications, http, navigation }: Bm5
                       />
                     </p>
                     <EuiButton type="primary" size="s" onClick={() => setHidden(!hidden)}>
-                      <FormattedMessage id="bm55plugin.buttonText" defaultMessage="Show Data" />
+                      <FormattedMessage id="bm55plugin.buttonText" defaultMessage={!hidden ? "Hide Data":"Show Data"} />
                     </EuiButton>
                   </EuiText>
                 </EuiPageContentBody>
