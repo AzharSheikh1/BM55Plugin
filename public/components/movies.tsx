@@ -32,12 +32,12 @@ class Movies extends Component {
     getPageData = () => {
         let {movies : allMovies, selectedGenre } = this.state;
         let date2 = new Date();
-        
         const movies = selectedGenre && selectedGenre._id
         ? allMovies.filter((m: { genre: { _id: any; }; }) => {
             let date1 = new Date(selectedGenre._id);
-            return date2 >= m.genre._id && date1 <= m.genre._id;
-        }) 
+            let date = new Date(m.genre._id)
+            return date2 >= date && date1 <= date;
+        })
         : allMovies;
 
         return {data : movies};
